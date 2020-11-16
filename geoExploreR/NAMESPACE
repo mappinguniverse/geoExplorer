@@ -5,4 +5,4 @@ import("shiny", "leaflet", "shinydashboard", "leafem",
          "RColorBrewer", "geojsonio", "utils")
 
 
-export("geoExplorer")
+export("shapeExploreR")

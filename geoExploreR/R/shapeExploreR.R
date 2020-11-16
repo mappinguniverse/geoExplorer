@@ -1,4 +1,4 @@
-geoExplorer <- function() {
+shapeExploreR <- function() {
 
   appDir <- system.file("app","geoExploreR", package = "geoExploreR")
   if (appDir == "")
