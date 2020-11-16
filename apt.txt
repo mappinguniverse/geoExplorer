@@ -1,4 +1,5 @@
 libv8-dev
+protobuf-compiler
 libprotobuf-dev
 libudunits2-dev
 libssl-dev
