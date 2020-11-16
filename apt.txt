@@ -1,3 +1,6 @@
+libv8-dev
+libnode-dev
+libprotobuf-dev
 libudunits2-dev
 libssl-dev
 libgdal-dev

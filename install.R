@@ -10,5 +10,5 @@ install.packages('DT')
 install.packages('tmap')
 install.packages('tmaptools')
 install.packages('RColorBrewer')
-install.packages('geojsonio')
+install.packages('geojsonio', dependencies = TRUE)
 
