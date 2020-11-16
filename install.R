@@ -1,0 +1,13 @@
+install.packages("rmarkdown")
+install.packages("httr")
+install.packages("shinydashboard")
+install.packages('leaflet')
+install.packages('shiny')
+install.packages('sf')
+install.packages('mapview')
+install.packages('DT')
+install.packages('tmap')
+install.packages('tmaptools')
+install.packages('RColorBrewer')
+install.packages('geojsonio')
+

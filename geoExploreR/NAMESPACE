@@ -1,0 +1,8 @@
+#exportPattern("^[[:alpha:]]+")
+
+import("shiny", "leaflet", "shinydashboard", "leafem",
+         "mapview", "sf", "DT", "tmap", "tmaptools",
+         "RColorBrewer", "geojsonio", "utils")
+
+
+export("geoExplorer")
