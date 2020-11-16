@@ -1,4 +1,3 @@
-libgdal1
 libssl-dev
 libgdal-dev
 libgeos-dev
