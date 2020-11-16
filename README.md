@@ -2,7 +2,7 @@
 
 
 
-Shiny apps for exploring, modifing and exporting data, geospatial coordinates and maps.
+Shiny apps for exploring, modifying and exporting data, geospatial coordinates and maps.
 
 
 
@@ -11,7 +11,8 @@ Shiny apps for exploring, modifing and exporting data, geospatial coordinates an
 A R package is available to use the app on your local machine:
 
 ```R
-
+library(remotes)
+remotes::install_github("dataallaround/geoExplorer@main",subdir = "geoExploreR")
 ```
 
 
@@ -30,7 +31,6 @@ geoExplorer::shapeExploreR()
 
 [mybinder.org](https://mybinder.org) provide server to run geoExplorer apps.
 
-- shapeExploreR
-  - A Shiny version [![Binder](https://mybinder.org/v2/gh/dataallaround/geoExplorer/main?urlpath=shiny/shapeExploreR/)
-  - A Rstudio version [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/dataallaround/geoExplorer/main?urlpath=rstudio/shapeExploreR/)
+- shapeExploreR [![Binder](https://mybinder.org/v2/gh/dataallaround/geoExplorer/main?urlpath=shiny/shapeExploreR/)
+
 
