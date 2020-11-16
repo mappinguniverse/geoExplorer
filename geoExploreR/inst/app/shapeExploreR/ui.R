@@ -5,7 +5,7 @@ ui <- dashboardPage(skin = "blue",
       tags$head(tags$style(".butt{background-color:white;} .butt{color: #555555;} .butt{font-style: italic;} .butt{width: 100%}")),
 
       fileInput("file", "Choose shape file", accept = c(".geojson",'.shp','.dbf','.sbn','.sbx','.shx', '.prj', ".cpg",'.topojson'), buttonLabel = "Browse", multiple = TRUE),
-      textInput('url', "Insert URL", value = "", placeholder = "URL to shape file"),
+      #textInput('url', "Insert URL", value = "", placeholder = "URL to shape file"),
       selectInput('variables', label = 'Variables', choices = " ", multiple = TRUE),
       selectInput('variable', label = 'Color variable', choices = " ", multiple = FALSE),
       selectInput('palette', label = 'Palette', choices = rownames(brewer.pal.info), selected = rownames(brewer.pal.info)[1],multiple = FALSE),
