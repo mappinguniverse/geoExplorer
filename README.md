@@ -31,6 +31,6 @@ geoExplorer::shapeExploreR()
 [mybinder.org](https://mybinder.org) provide server to run geoExplorer apps.
 
 - shapeExploreR
-  - A Shiny version 
-  - A Rstudio version
+  - A Shiny version [![Binder](https://mybinder.org/v2/gh/dataallaround/geoExplorer/main?urlpath=shiny/shapeExploreR/)
+  - A Rstudio version [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/dataallaround/geoExplorer/main?urlpath=rstudio/shapeExploreR/)
 
