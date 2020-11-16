@@ -36,3 +36,12 @@ geoExplorer::shapeExploreR()
 - shapeExploreR [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/dataallaround/geoExplorer/main?urlpath=shiny/shapeExploreR/)
 
 
+
+### Docker
+
+Docker are available on https://hub.docker.com/repository/docker/dataallaround/geoexplorer.
+
+```bash
+docker push dataallaround/geoexplorer
+```
+
