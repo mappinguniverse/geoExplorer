@@ -7,6 +7,7 @@ Shiny apps for exploring, modifying and exporting data, geospatial coordinates a
 -------------------
 [Run shapeExploreR](https://mybinder.org/v2/gh/dataallaround/geoExplorer/main?urlpath=shiny/shapeExploreR/)
 -------------------
+-------------------
 
 ### Installation R
 
