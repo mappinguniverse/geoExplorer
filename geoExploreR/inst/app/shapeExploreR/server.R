@@ -37,7 +37,8 @@ shinyServer(function(input, output, session) {
     if (input$variable == " " | input$variable == "NONE") {
       ciao <- tm_shape(map) + tm_polygons(col = "grey80", popup.vars = input$pop) + tm_tiles(input$tiles)
     } else {
-      ciao <- tm_shape(map) + tm_polygons(col = input$variable, style = input$legend, palette = input$palette, popup.vars = input$pop)
+      palette = str_sub(input$palette, start = 1, str_locate(input$palette, " ")[1]-1)
+      ciao <- tm_shape(map) + tm_polygons(col = input$variable, style = input$legend, palette = palette, popup.vars = input$pop)
     }
     return(tmap_leaflet(ciao))
   })
@@ -118,7 +119,8 @@ shinyServer(function(input, output, session) {
         if (input$variable == " " | input$variable == "NONE") {
           ciao <- tm_shape(map) + tm_polygons(col = "grey80", popup.vars = input$pop) + tm_tiles(input$tiles)
         } else {
-          ciao <- tm_shape(map) + tm_polygons(col = input$variable, style = input$legend, palette = input$palette, popup.vars = input$pop)
+          palette = str_sub(input$palette, start = 1, str_locate(input$palette, " ")[1]-1)
+          ciao <- tm_shape(map) + tm_polygons(col = input$variable, style = input$legend, palette = palette, popup.vars = input$pop)
         }
 
         if (input$download_type == "map.pdf" | input$download_type == "map.jpeg" | input$download_type == "map.png" | input$download_type == "map.html") {

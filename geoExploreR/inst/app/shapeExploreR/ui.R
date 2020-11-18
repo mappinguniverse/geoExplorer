@@ -1,6 +1,9 @@
+
+
+
 ui <- dashboardPage(
   skin = "blue",
-  dashboardHeader(title = "geoExplorer", disable = FALSE),
+  dashboardHeader(title = "shapeExplorer", disable = FALSE),
   dashboardSidebar(
     sidebarMenu(
       tags$head(tags$style(".butt{background-color:white;} .butt{color: #555555;} .butt{font-style: italic;} .butt{width: 100%}")),
@@ -9,8 +12,8 @@ ui <- dashboardPage(
       # textInput('url', "Insert URL", value = "", placeholder = "URL to shape file"),
       selectInput("variables", label = "Variables", choices = " ", multiple = TRUE),
       selectInput("variable", label = "Color variable", choices = " ", multiple = FALSE),
-      selectInput("palette", label = "Palette", choices = rownames(brewer.pal.info), selected = rownames(brewer.pal.info)[1], multiple = FALSE),
-      selectInput("legend", label = "Legend type", choices = c("cont", "order", "log10", "cat", "fixed", "sd", "equal", "pretty", "quantile", "hclust", "bclust", "fisher", "jenks", "dpih", "headtails", "log10_pretty"), selected = "pretty", multiple = FALSE),
+      selectInput("palette", label = "Palette", choices = paste(rownames(brewer.pal.info), " (", brewer.pal.info$category,")", sep = ""), selected = paste(rownames(brewer.pal.info)[1], " (", brewer.pal.info$category,")", sep = "")[1], multiple = FALSE),
+      selectInput("legend", label = "Legend type", choices = c("ont", "order", "log10", "cat", "fixed", "sd", "equal", "pretty", "quantile", "hclust", "bclust", "fisher", "jenks", "dpih", "headtails", "log10_pretty"), selected = "pretty", multiple = FALSE),
       selectInput("tiles", label = "Tiles", choices = unlist(leaflet::providers), selected = "OpenStreetMap", multiple = FALSE),
       selectInput("pop", label = "Popup Variables", choices = " ", multiple = TRUE),
 
