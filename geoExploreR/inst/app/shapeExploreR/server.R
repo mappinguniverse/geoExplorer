@@ -4,13 +4,41 @@ shinyServer(function(input, output, session) {
   data <- reactive({
     req(input$file)
     shp <- input$file
+
     if (nrow(shp) == 1) {
       shp_dir <- input$file$datapath
+      shiny::validate(
+        need(tools::file_ext(shp) %in% c('geojson', 'json', 'topojson', 'shp'), "geoJSON, topoJSON, JSON and shapefile are supported."))
+
     } else {
       dir_prv <- getwd()
       uploadDirectory <- dirname(shp$datapath[1])
       setwd(uploadDirectory)
+
+      chk <- tools::file_ext(shp$datapath) %in% c('geojson', 'json', 'topojson')
+      chk1 <- tools::file_ext(shp$datapath) %in% c('dbf', 'prj', 'shx', "shp")
+
+      print(all(chk))
+      print(all(chk1))
+
+      if(nrow(shp) != 4)
+      {
+        shiny::validate(
+          need(nrow(shp$datapath) != 4, "Shapefile requires .dbf, .prj, .shp and .shx files. Please load all these files."))
+      }else
+        if(!all(chk))
+      {
+        shiny::validate(
+          need(chk, "Multipe file for geoJSON, topoJSON, JSON are not supported. Plese provide a single file"),
+          need(chk1, "Shapefile requires .dbf, .prj, .shp and .shx files. Please load all these files."))
+      }else if(!all(chk1))
+      {
+        shiny::validate(
+          need(chk1, "Shapefile requires .dbf, .prj, .shp and .shx files. Please load all these files."))
+      }
+
       for (i in 1:nrow(shp)) {
+
         file.rename(shp$datapath[i], shp$name[i])
       }
       shp_names <- shp$name[grep(x = shp$name, pattern = "*.shp")]
@@ -18,9 +46,10 @@ shinyServer(function(input, output, session) {
       setwd(dir_prv)
     }
 
-    df <- read_sf(shp_dir)
+    df <- read_sf(shp_dir,as_tibble = FALSE)
     dt$df <- df
   })
+
 
   dt <- reactiveValues()
 
